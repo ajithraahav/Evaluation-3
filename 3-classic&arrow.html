@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic and  Arrow Function Event Callbacks</title>
+</head>
+
+<button id="btn-1">Arrow Funciton</button>
+<button id="btn-2">Classic Function</button>
+<p id="arrow-1"></p>
+<p id="arrow-2"></p>
+<p id="classic-1"></p>
+<p id="classic-2"></p>
+
+<body>
+    <script>
+        let arrow = () => {
+            document.getElementById("arrow-1").innerHTML = "This is arrow funciton";
+            document.getElementById("arrow-2").innerHTML = this;
+        }
+        const element = document.getElementById("btn-1");
+        element.addEventListener("click", arrow);
+
+// ---------------------------------------------------------------------------------------------------
+        function  classic(){
+            document.getElementById("classic-1").innerHTML = "This is classic funciton";
+            document.getElementById("classic-2").innerHTML = this;
+        }
+        const elements = document.getElementById("btn-2");
+        elements.addEventListener("click", classic);    </script>
+</body>
+</html>
